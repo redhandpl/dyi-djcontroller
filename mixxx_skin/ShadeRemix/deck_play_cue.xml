@@ -1,0 +1,114 @@
+<Template>
+  <WidgetGroup>
+    <Size>105f,59f</Size>
+    <Children>
+      <PushButton>
+        <Pos>14,30</Pos>
+        <NumberStates>2</NumberStates>
+        <State>
+          <Number>0</Number>
+          <Pressed>skin:/btn/btn_play_deck.png</Pressed>
+          <Unpressed>skin:/btn/btn_play_deck.png</Unpressed>
+        </State>
+        <State>
+          <Number>1</Number>
+          <Pressed>skin:/btn/btn_play_deck_over.png</Pressed>
+          <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+        </State>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],play_indicator</ConfigKey>
+        </Connection>
+      </PushButton>
+
+      <PushButton>
+        <Pos>14,30</Pos>
+        <NumberStates>2</NumberStates>
+        <State>
+          <Number>0</Number>
+        </State>
+        <State>
+          <Number>1</Number>
+          <Pressed>skin:/btn/btn_play_deck_preview.png</Pressed>
+          <Unpressed>skin:/btn/btn_play_deck_preview.png</Unpressed>
+        </State>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
+        </Connection>
+      </PushButton>
+
+      <PushButton>
+        <TooltipId>play_cue_set</TooltipId>
+        <Pos>14,30</Pos>
+        <NumberStates>2</NumberStates>
+        <State>
+          <Number>0</Number>
+          <Pressed>skin:/btn/btn_play_deck_down.png</Pressed>
+          <Unpressed></Unpressed>
+        </State>
+        <State>
+          <Number>1</Number>
+          <Pressed>skin:/btn/btn_play_deck_overdown.png</Pressed>
+          <Unpressed>skin:/btn/btn_play_deck_over.png</Unpressed>
+        </State>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],play</ConfigKey>
+          <ButtonState>LeftButton</ButtonState>
+        </Connection>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],cue_set</ConfigKey>
+          <ButtonState>RightButton</ButtonState>
+        </Connection>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],play_latched</ConfigKey>
+          <ConnectValueFromWidget>false</ConnectValueFromWidget>
+        </Connection>
+      </PushButton>
+
+      <PushButton>
+        <TooltipId>cue_default_cue_gotoandstop</TooltipId>
+        <Pos>14,9</Pos>
+        <NumberStates>2</NumberStates>
+        <State>
+          <Number>0</Number>
+          <Pressed>skin:/btn/btn_cue_down.png</Pressed>
+          <Unpressed>skin:/btn/btn_cue.png</Unpressed>
+        </State>
+        <State>
+          <Number>1</Number>
+          <Pressed>skin:/btn/btn_cue_overdown.png</Pressed>
+          <Unpressed>skin:/btn/btn_cue_over.png</Unpressed>
+        </State>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],cue_default</ConfigKey>
+          <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
+          <ButtonState>LeftButton</ButtonState>
+        </Connection>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],cue_gotoandstop</ConfigKey>
+          <EmitOnPressAndRelease>true</EmitOnPressAndRelease>
+          <ButtonState>RightButton</ButtonState>
+        </Connection>
+        <Connection>
+          <ConfigKey>[Channel<Variable name="channum"/>],cue_indicator</ConfigKey>
+        </Connection>
+      </PushButton>
+
+      <Template src="skin:hotcue_button.xml">
+        <SetVariable name="hotcue">1</SetVariable>
+        <SetVariable name="pos">60,9</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_button.xml">
+        <SetVariable name="hotcue">2</SetVariable>
+        <SetVariable name="pos">60,30</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_button.xml">
+        <SetVariable name="hotcue">3</SetVariable>
+        <SetVariable name="pos">82,9</SetVariable>
+      </Template>
+      <Template src="skin:hotcue_button.xml">
+        <SetVariable name="hotcue">4</SetVariable>
+        <SetVariable name="pos">82,30</SetVariable>
+      </Template>
+    </Children>
+  </WidgetGroup>
+</Template>
